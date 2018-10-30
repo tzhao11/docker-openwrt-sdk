@@ -5,7 +5,7 @@ RUN apt-get update &&\
                        git-core subversion wget unzip \
                        ccache libncurses5-dev zlib1g-dev \
                        golang-1.10-go python gawk \
-                       sudo groff-base upx-ucl &&\
+                       sudo groff-base upx-ucl time &&\
     apt-get remove -y openssh-client manpages manpages-dev krb5-locales locales &&\
     apt-get -y autoremove &&\
     apt-get clean
