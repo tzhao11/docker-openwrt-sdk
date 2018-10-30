@@ -1,11 +1,9 @@
 FROM ubuntu:bionic
 
 RUN apt-get update &&\
-    apt-get install -y build-essential \
-                       git-core subversion wget unzip \
-                       ccache libncurses5-dev zlib1g-dev \
-                       golang-1.10-go python gawk \
-                       sudo groff-base upx-ucl time &&\
-    apt-get remove -y openssh-client manpages manpages-dev krb5-locales locales &&\
-    apt-get -y autoremove &&\
+    apt-get install -y build-essential libncurses5-dev gawk git subversion \
+	libssl-dev gettext zlib1g-dev swig unzip time \
+    apt-get remove -y openssh-client manpages manpages-dev krb5-locales \
+	locales && \
+    apt-get -y autoremove && \
     apt-get clean
