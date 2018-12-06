@@ -5,7 +5,7 @@ services:
 
 env:
   global:
-    - TAGS="17.01-ar71xx 17.01-x86-64 18.06-ar71xx 18.06-x86-64"
+    - TAGS=""
     - IMAGE_NAME="${DOCKERHUB_USER}/openwrt-sdk"
 
 before_install:
