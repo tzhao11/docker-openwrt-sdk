@@ -1,9 +1,9 @@
-FROM ubuntu:bionic
+FROM debian:latest
 
-RUN apt-get update &&\
+RUN apt-get update -qq &&\
     apt-get install -y build-essential libncurses5-dev gawk git subversion \
-	libssl-dev gettext zlib1g-dev swig unzip time sshpass wget python file && \
+        libssl-dev gettext zlib1g-dev swig unzip time python wget file &&\
     apt-get remove -y openssh-client manpages manpages-dev krb5-locales \
-	locales && \
-    apt-get -y autoremove && \
-    apt-get clean
+        locales &&\
+    apt-get -y autoremove && apt-get clean
+
