@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 RUN apt-get update &&\
     apt-get install -y build-essential libncurses5-dev gawk git subversion \
-	libssl-dev gettext zlib1g-dev swig unzip time sshpass && \
+	libssl-dev gettext zlib1g-dev swig unzip time sshpass wget && \
     apt-get remove -y openssh-client manpages manpages-dev krb5-locales \
 	locales && \
     apt-get -y autoremove && \
