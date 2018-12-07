@@ -10,11 +10,11 @@ env:
 
 before_install:
   - docker version
+  - docker build -t "${IMAGE_NAME}:base" -f Dockerfile.base .
 
 script:
-  - docker build --pull --cache-from "${IMAGE_NAME}:base" -t "${IMAGE_NAME}:base" -f Dockerfile.base .
   - for TAG in $TAGS; do
-      docker build --pull --cache-from "${IMAGE_NAME}:$TAG" -t "${IMAGE_NAME}:$TAG" -f "Dockerfile.$TAG" .;
+      docker build -t "${IMAGE_NAME}:$TAG" -f "Dockerfile.$TAG" .;
     done
 
 before_deploy:
